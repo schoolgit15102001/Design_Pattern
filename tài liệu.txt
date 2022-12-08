@@ -1,0 +1,74 @@
+Bridge Pattern
+0/#Bridge_Pattern_la_gi
+https://cafedev.vn/tu-hoc-design-pattern-gioi-thieu-ve-bridge-design-pattern-va-code-vi-du
+https://labs.flinters.vn/design-pattern/tim-hieu-ve-bridge-pattern/
+
+factory pattern
+https://gpcoder.com/4352-huong-dan-java-design-pattern-factory-method/
+
+Abstract Factory Pattern
+https://gpcoder.com/4365-huong-dan-java-design-pattern-abstract-factory/
+
+Composite pattern
+https://gpcoder.com/4554-huong-dan-java-design-pattern-composite
+
+State Pattern
+
+<<------------------------------------------------------------------------------------------------->>
+Nhóm khởi tạo
+factory pattern: ( đã vẽ )
+Có 1 đối tượng duy nhất, ví dụ như Xe -> sẽ bán 3 loại xe: Honda, Nexus và Toyota.
+Muốn bán thêm 3 loại xe khác như Mercedes, Porsche, Mazda trong tương lai.
+Nhận biết: giảm thiểu việc thay đổi code của ứng dụng, không cần phải thay đổi source code.
+Tại sao dùng:
+- Dùng Factory Pattern trong trường hợp cần tạo chuơng trình độc lập với những lớp cụ thể cần tạo 
+1 đối tượng, code ở phía client không thay đổi khi thay đổi logic ở factory hay sub class.
+- Trường hợp cần mở rộng code sau khi thiết kế ứng dụng. Khi cần mở rộng, tạo ra sub class và 
+implement thêm vào factory method
+
+Abstract Factory Pattern ( đã vẽ )
+Có 2 đối tượng ko liên quan tới nhau: ghế và bàn. Mỗi đối tượng này đều có 2 factory là nhựa và gỗ
+Có 2 đối tượng ko liên quan là quần áo và giày dép. Mỗi đối tượng đều có 2 factory là Anh và Mỹ
+Vì sao dùng ?
+- Giúp tránh được việc sử dụng điều kiện logic bên trong Factory Pattern. 
+Khi một Factory Method lớn (có quá nhiều sử lý if-else hay switch-case), chúng ta 
+nên sử dụng theo mô hình Abstract Factory để dễ quản lý hơn.
+- Abstract Factory Pattern là factory của các factory, có thể dễ dạng mở rộng 
+để chứa thêm các factory và các sub-class khác.
+
+<<------------------------------------------------------------------------------------------------->>
+Nhóm cấu trúc
+Bridge Pattern ( đã vẽ )
+Dễ dàng bảo trì và hạn chế việc triển khai quá nhiều các lớp con
+Ví dụ: Ngân hàng sẽ có nhiều ngân hàng. Mỗi ngân hàng sẽ có nhiều loại tài khoản
+=> Bridge Pattern
+Ví dụ 2: Chương trình nhận diện hình khối. Sẽ có nhiều hình khối. Mỗi hình khối có thể có nhiều màu.
+=> Bridge Pattern
+Ví dụ 3: Có nhiều phương tiện như bus, bike. Mỗi phương tiện sẽ có Xưởng riêng:
+Sản xuất và Lắp ráp.
+=> Bridge Pattern
+Một đối tượng abstract. Một đối tượng implement.
+
+Composite Pattern
+Cùng xử lý trên 1 object. Nhưng 1 object đóng vai trò là con, 1 obj là cha. Nó có cùng các tính chất
+với nhau
+Ví dụ: File và Folder có cùng các thao tác ( thêm, xóa, sửa ) như nhau. File con, Folder là cha.
+Pin có 2 loại: Pin cơ bản và Pin tích hợp ( ghép nhiều pin có sẵn để tạo ra một pin tích hợp )
+Software deparment bao gồm tester department
+Nhân viên bị quản lý và Nhân viên quản lý đều là Nhân viên
+Vì sao dùng ?
+Composite Pattern chỉ nên được áp dụng khi nhóm đối tượng phải hoạt động như một đối tượng duy nhất 
+(theo cùng một cách).
+
+<<------------------------------------------------------------------------------------------------->>
+Nhóm hành vi
+Cùng một hành vi nhưng nhiều cách thức thì sử dụng Strategy Pattern
+
+State Pattern
+Khi muốn quản lý các đối tượng dựa vào trạng thái của nó.
+Ví dụ: Xe máy có các trạng thái lên số sẵn sàng -> số 1 -> số 2 -> số 3 -> số 4 -> đạp phanh
+Ví dụ 2: ứng dụng quản lý Document. Một Document có thể bao gồm các trạng thái: tạo mới (New), 
+trình phê duyệt (Submitted), phê duyệt (Approved) và từ chối (Rejected).
+Ví dụ 3: Máy bán hàng tự động có các trạng  thái dựa trên hàng tồn kho, số lượng tiền gửi, 
+khả năng thay đổi, mặt hàng được chọn
+
